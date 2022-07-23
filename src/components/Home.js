@@ -3,6 +3,7 @@ import Categories from "./Categories";
 import Books from "./Books";
 
 const Home = () => {
+
     return (
         <div>
             <Navbar />

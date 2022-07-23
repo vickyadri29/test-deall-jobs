@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const baseURL =
   "https://asia-southeast2-sejutacita-app.cloudfunctions.net/fee-assessment-categories";
@@ -27,10 +28,10 @@ const Categories = () => {
         </h2>
         <div className="flex flex-wrap justify-center gap-x-10">
           {datas.map((data, index) => {
-            const { name } = data;
+            const { id, name } = data;
             return (
               <div key={index} className="border md:w-[300px] my-4 rounded-md shadow-sm text-center">
-                <p className="px-4 py-2 cursor-pointer hover:bg-gray-50">{name}</p>
+                <Link to={`/detailcategories/${id}`}><p className="px-4 py-2 cursor-pointer hover:bg-gray-50">{name}</p></Link>
               </div>
             );
           })}
