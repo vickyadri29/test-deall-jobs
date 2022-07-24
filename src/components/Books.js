@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-import { Navigation, Pagination } from "swiper";
+import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -24,28 +24,27 @@ const Books = () => {
   }, []);
 
   return (
-    <div className="text-gray-700 bg-yellow-100">
+    <div className="text-gray-800 bg-gray-50">
       <div className="max-w-6xl m-auto p-5">
         <div className="">
-          <h2 className="md:text-3xl font-semibold">
+          <h2 className="md:text-4xl font-bold text-center text-sky-700 md:py-5">
             Booku Recomendation This Week
           </h2>
         </div>
         <div className="">
           <Swiper
             // install Swiper modules
-            modules={[Navigation, Pagination]}
-            navigation
+            modules={[Pagination]}
             pagination={{ clickable: true }}
             // onSwiper={(swiper) => console.log(swiper)}
             // onSlideChange={() => console.log("slide change")}
-            className="md:h-[400px] h-[380px]"
+            className="md:h-[400px] h-[230px]"
             breakpoints={{
               320: {
-                slidesPerView: 1,
+                slidesPerView: 3,
               },
               768: {
-                slidesPerView: 2,
+                slidesPerView: 3,
               },
               1024: {
                 slidesPerView: 4,
@@ -60,9 +59,9 @@ const Books = () => {
                     <img
                       src={cover_url}
                       alt=""
-                      className="md:w-[180px] w-[200px] rounded-xl"
+                      className="md:w-[180px] w-[100px] rounded-lg"
                     />
-                    <p className="md:text-sm text-xs py-2 font-semibold">{title}</p>
+                    <p className="md:text-sm text-[9px] md:py-2 py-1 font-semibold">{title}</p>
                   </div>
                 </SwiperSlide>
               );

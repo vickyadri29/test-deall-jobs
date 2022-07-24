@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 import Navbar from "./Navbar";
-import { Navigation, Pagination } from "swiper";
+import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -11,18 +11,17 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-const DetailBooks = () => {
+const DetailCategories = () => {
   const [detailCategories, setDetailCategories] = useState([]);
   const [query, setQuery] = useState("");
-  
+
   const params = useParams();
-  
-  const baseURL = `https://asia-southeast2-sejutacita-app.cloudfunctions.net/fee-assessment-books?categoryId=${params.id}&size=15`
+
+  const baseURL = `https://asia-southeast2-sejutacita-app.cloudfunctions.net/fee-assessment-books?categoryId=${params.id}&size=15`;
 
   useEffect(() => {
     const fetchDetailCategories = async () => {
       const res = await axios.get(baseURL);
-      console.log(res.data);
       setDetailCategories(res.data);
     };
     fetchDetailCategories();
@@ -32,55 +31,59 @@ const DetailBooks = () => {
     <div className="text-gray-800">
       <Navbar />
       <div className="max-w-6xl m-auto">
-        <div className="">
-          <input
-            type="search"
-            name="search"
-            placeholder="Search..."
-            onChange={(e) => setQuery(e.target.value)}
-            className="m-5 form-control flex-auto min-w-0 px-3 py-1.5 text-base font-normal text-gray-700 border rounded transition ease-in-out focus:border-slate-500 focus:outline-none"
-          />
-        </div>
+        <input
+          type="search"
+          name="search"
+          placeholder="Search the book"
+          onChange={(e) => setQuery(e.target.value)}
+          className="md:m-5 m-3 mx-5 w-[240px] h-[30px] md:text-base text-[10px] px-3 py-1.5 text-gray-700 border rounded transition ease-in-out focus:border-slate-500 focus:outline-none"
+        />
         <Swiper
           // install Swiper modules
-          modules={[Navigation, Pagination]}
-          navigation
+          modules={[Pagination]}
           pagination={{ clickable: true }}
           // onSwiper={(swiper) => console.log(swiper)}
           // onSlideChange={() => console.log("slide change")}
-          className="md:h-[450px] h-[380px]"
+          className="md:h-[400px]  h-[220px]"
           breakpoints={{
             320: {
-              slidesPerView: 1,
+              slidesPerView: 3,
             },
             768: {
-              slidesPerView: 2,
+              slidesPerView: 3,
             },
             1024: {
               slidesPerView: 4,
             },
           }}
         >
-          {detailCategories.filter(category => category.title.toLowerCase().includes(query)).map((category, index) => {
-            const { title, authors, cover_url } = category;
-            return (
-              <SwiperSlide key={index}>
-                <div key={index} className="flex flex-col items-center my-5">
-                  <img
-                    src={cover_url}
-                    alt=""
-                    className="md:w-[200px] w-[100px] rounded-sm"
-                  />
-                  <p className="font-semibold p-1">{title}</p>
-                  <p className="md:text-[13px]">{authors}</p>
-                </div>
-              </SwiperSlide>
-            );
-          })}
+          {detailCategories
+            .filter((category) => category.title.toLowerCase().includes(query))
+            .map((category, index) => {
+              const { title, authors, cover_url } = category;
+              return (
+                <SwiperSlide key={index}>
+                  <div
+                    key={index}
+                    className="flex flex-col md:items-center md:my-5 mx-5"
+                  >
+                    <img
+                      src={cover_url}
+                      alt=""
+                      className="md:w-[180px] w-[100px] rounded-lg cursor-pointer"
+                    />
+                    <p className="md:text-sm text-[6px] pt-[5px] font-semibold">
+                      {title}
+                    </p>
+                    <p className="md:text-sm text-[6px]">{authors}</p>
+                  </div>
+                </SwiperSlide>
+              );
+            })}
         </Swiper>
       </div>
     </div>
   );
 };
 
-export default DetailBooks;
+export default DetailCategories;

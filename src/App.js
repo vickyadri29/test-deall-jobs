@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 // Import Components
 import Home from "./components/Home";
 import Books from "./components/Books";
-import DetailBooks from "./components/DetailCategories";
+import DetailCategories from "./components/DetailCategories";
 
 function App() {
   useEffect(() => {
@@ -19,7 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/books" element={<Books />} />
-          <Route path="/detailcategories/:id" element={<DetailBooks/>}/>
+          <Route path="/detailcategories/:id" element={<DetailCategories/>}/>
         </Routes>
         </BrowserRouter>
       </div>

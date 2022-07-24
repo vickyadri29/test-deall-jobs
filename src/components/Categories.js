@@ -19,17 +19,17 @@ const Categories = () => {
   return (
     <div className="text-gray-800">
       <div className="max-w-6xl m-auto p-5">
-        <h2 className="md:text-3xl font-semibold">Explore Categories</h2>
-        <div className="flex flex-wrap justify-center gap-x-10">
+        <h2 className="md:text-4xl font-bold text-center text-sky-700 md:py-5">Explore Categories</h2>
+        <div className="flex flex-wrap md:justify-center justify-between md:gap-x-10">
           {datas.map((data, index) => {
             const { id, name } = data;
             return (
               <div
                 key={index}
-                className="border md:w-[300px] my-4 rounded-md shadow-sm text-center"
+                className="md:w-[300px] w-[160px] md:my-4 my-1 md:text-sm text-[8px] border rounded-md shadow-sm text-center"
               >
                 <Link to={`/detailcategories/${id}`}>
-                  <p className="px-4 py-2 cursor-pointer hover:bg-gray-50">
+                  <p className="px-4 py-2 cursor-pointer hover:bg-gray-50 font-semibold text-gray-600">
                     {name}
                   </p>
                 </Link>
