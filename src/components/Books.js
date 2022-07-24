@@ -24,7 +24,7 @@ const Books = () => {
   }, []);
 
   return (
-    <div className="text-gray-800 bg-gray-50">
+    <div className="text-gray-800 bg-slate-50">
       <div className="max-w-6xl m-auto p-5">
         <div className="">
           <h2 className="md:text-4xl font-bold text-center text-sky-700 md:py-5">
