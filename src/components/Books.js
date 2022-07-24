@@ -2,7 +2,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 import { Navigation, Pagination } from "swiper";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -10,21 +9,18 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-const baseURL =
-  "https://asia-southeast2-sejutacita-app.cloudfunctions.net/fee-assessment-books?categoryId=1&size=10";
-
 const Books = () => {
   const [books, setBooks] = useState([]);
+  
+  const baseURL = "https://asia-southeast2-sejutacita-app.cloudfunctions.net/fee-assessment-books?categoryId=1&size=10";
 
   useEffect(() => {
-    axios
-      .get(baseURL)
-      .then((res) => {
-        setBooks(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    const fetchBooks = async () => {
+      const res = await axios
+      .get(baseURL);
+      setBooks(res.data)
+    }
+    fetchBooks()
   }, []);
 
   return (
