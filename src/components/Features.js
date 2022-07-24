@@ -10,7 +10,7 @@ const Features = () => {
         </h2>
         <div className="grid md:grid-cols-4 grid-cols-2 gap-7 my-5">
           {iconFeatures.map((icon) => (
-            <div className=" flex flex-col border rounded-2xl shadow-md p-4 cursor-pointer hover:shadow-lg">
+            <div className=" flex flex-col border rounded-2xl shadow-md p-4 hover:shadow-lg">
               <div className="flex items-center">
                 <img src={icon.img} alt="" className="md:w-9 w-7"/>
                 <h3 className="ml-2 md:text-md text-sm font-bold">{icon.title}</h3>

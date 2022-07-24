@@ -17,7 +17,7 @@ const DetailCategories = () => {
 
   const params = useParams();
 
-  const baseURL = `https://asia-southeast2-sejutacita-app.cloudfunctions.net/fee-assessment-books?categoryId=${params.id}&size=15`;
+  const baseURL = `https://asia-southeast2-sejutacita-app.cloudfunctions.net/fee-assessment-books?categoryId=${params.id}&size=20`;
 
   useEffect(() => {
     const fetchDetailCategories = async () => {
@@ -36,7 +36,7 @@ const DetailCategories = () => {
           name="search"
           placeholder="Search the book"
           onChange={(e) => setQuery(e.target.value)}
-          className="md:m-5 m-3 mx-5 w-[240px] h-[30px] md:text-base text-[10px] px-3 py-1.5 text-gray-700 border rounded transition ease-in-out focus:border-slate-500 focus:outline-none"
+          className="md:m-5 m-3 mx-5 w-[240px] h-[30px] md:text-base text-[10px] px-3 py-1.5 text-gray-700 border rounded transition ease-in-out focus:border-slate-300 focus:outline-none"
         />
         <Swiper
           // install Swiper modules
@@ -81,6 +81,7 @@ const DetailCategories = () => {
               );
             })}
         </Swiper>
+        <button className="border bg-slate-800 px-3 py-2 text-white hover:bg-slate-500">Add bookmark</button>
       </div>
     </div>
   );

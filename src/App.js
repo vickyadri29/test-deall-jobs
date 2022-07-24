@@ -4,7 +4,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 // Import Components
 import Home from "./components/Home";
-import Books from "./components/Books";
 import DetailCategories from "./components/DetailCategories";
 
 function App() {
@@ -18,7 +17,6 @@ function App() {
         <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/books" element={<Books />} />
           <Route path="/detailcategories/:id" element={<DetailCategories/>}/>
         </Routes>
         </BrowserRouter>

@@ -33,7 +33,7 @@ const Footer = () => {
           <div className="md:text-left text-center md:my-0 my-5">
             <div>
               <h2 className="font-bold text-xl px-1">Office</h2>
-              <p className="mb-4 px-2">Closed temporarily due to Covid-19</p>
+              <p className="mb-4 px-1   ">Closed temporarily due to Covid-19</p>
             </div>
             <div>
               <h2 className="font-bold text-xl px-1">Matrix Smart Suite</h2>
