@@ -5,6 +5,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 // Import Components
 import Home from "./components/Home";
 import DetailCategories from "./components/DetailCategories";
+import DetailBooks from "./components/DetailBooks";
+import Bookmarks from "./components/Bookmarks";
 
 function App() {
   useEffect(() => {
@@ -18,6 +20,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/detailcategories/:id" element={<DetailCategories/>}/>
+          <Route path="/detailbooks/:id" element={<DetailBooks />}/>
+          <Route path="/bookmarks" element={<Bookmarks />}/>
         </Routes>
         </BrowserRouter>
       </div>

@@ -11,7 +11,7 @@ const Footer = () => {
           </div>
           <div className="md:text-left text-center md:my-0 my-5">
             <h2 className="font-bold text-xl px-1">Contact Us</h2>
-            <p className="mb-4 px-1">Monday-Sunday, 08.00-22.00</p>
+            <p className="mb-4 px-1 font-medium">Monday-Sunday, 08.00-22.00</p>
             <ul className="">
               <li className="flex md:justify-start items-center justify-center p-1 font-semibold">
                 <FaWhatsapp />
@@ -33,11 +33,11 @@ const Footer = () => {
           <div className="md:text-left text-center md:my-0 my-5">
             <div>
               <h2 className="font-bold text-xl px-1">Office</h2>
-              <p className="mb-4 px-1   ">Closed temporarily due to Covid-19</p>
+              <p className="mb-4 px-1 font-medium">Closed temporarily due to Covid-19</p>
             </div>
             <div>
               <h2 className="font-bold text-xl px-1">Matrix Smart Suite</h2>
-              <div className="px-1">
+              <div className="px-1 text-[15px] font-medium">
                 <p>Cibis Nine Building Lt. 11</p>
                 <p>Jl. TB Smatupang No.2, RT.13/RW.5,</p>
                 <p>Cilandak Tim., Kec. Ps. Minggu,</p>
