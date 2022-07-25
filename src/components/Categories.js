@@ -29,7 +29,7 @@ const Categories = () => {
                 className="md:w-[300px] w-[160px] md:my-4 my-1 md:text-sm text-[8px] border rounded-md shadow-sm text-center"
               >
                 <Link to={`/detailcategories/${id}`}>
-                  <p className="px-4 py-2 cursor-pointer hover:bg-gray-50 font-semibold text-gray-600">
+                  <p className="px-4 py-2 hover:bg-gray-50 font-semibold text-gray-600 cursor-pointer">
                     {name}
                   </p>
                 </Link>
